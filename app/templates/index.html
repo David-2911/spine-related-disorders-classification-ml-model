@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spine System</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <form id="modelForm" method="POST" action="/select_model">
+      <h1>Welcome to the Spine System</h1>
+      <h3>Select a Model</h3>
+      <div class="model-options">
+        <input type="radio" name="model" value="catboost" id="catboost" />
+        <label for="catboost">CatBoost</label>
+        <input type="radio" name="model" value="adaboost" id="adaboost" />
+        <label for="adaboost">AdaBoost</label>
+        <input
+          type="radio"
+          name="model"
+          value="random_forest"
+          id="random_forest"
+        />
+        <label for="random_forest">Random Forest</label>
+      </div>
+      <p>
+        The best model is: <strong>{{ best_model.name }}</strong> with a score
+        of {{ best_model.score }}.
+      </p>
+      <h3>Enter Data</h3>
+      <label for="pelvic_incidence">Pelvic Incidence:</label>
+      <input
+        type="number"
+        id="pelvic_incidence"
+        name="pelvic_incidence"
+        step="0.0000000001"
+        required
+      />
+      <label for="pelvic_tilt">Pelvic Tilt Numeric:</label>
+      <input
+        type="number"
+        id="pelvic_tilt"
+        name="pelvic_tilt"
+        step="0.0000000001"
+        required
+      />
+      <label for="lumbar_lordosis_angle">Lumbar Lordosis Angle:</label>
+      <input
+        type="number"
+        id="lumbar_lordosis_angle"
+        name="lumbar_lordosis_angle"
+        step="0.0000000001"
+        required
+      />
+      <label for="sacral_slope">Sacral Slope:</label>
+      <input
+        type="number"
+        id="sacral_slope"
+        name="sacral_slope"
+        step="0.0000000001"
+        required
+      />
+      <label for="pelvic_radius">Pelvic Radius:</label>
+      <input
+        type="number"
+        id="pelvic_radius"
+        name="pelvic_radius"
+        step="0.0000000001"
+        required
+      />
+      <label for="degree_spondylolisthesis">Degree Spondylolisthesis:</label>
+      <input
+        type="number"
+        id="degree_spondylolisthesis"
+        name="degree_spondylolisthesis"
+        step="0.0000000001"
+        required
+      />
+      <button type="submit"><i class="fas fa-check-circle"></i> Submit</button>
+    </form>
+  </body>
+</html>
