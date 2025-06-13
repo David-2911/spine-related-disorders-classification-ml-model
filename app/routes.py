@@ -35,7 +35,8 @@ def select_model():
     matched_model_key = None
     if selected_model_normalized:
         for key in models.keys():
-            if key.lower() == selected_model_normalized:
+            # Support both 'extra_trees' and 'Extra Trees' for frontend-backend consistency
+            if key.lower().replace(' ', '_') == selected_model_normalized:
                 matched_model_key = key
                 break
 
@@ -105,7 +106,8 @@ def api_predict():
     matched_model_key = None
     if selected_model_normalized:
         for key in models.keys():
-            if key.lower() == selected_model_normalized:
+            # Support both 'extra_trees' and 'Extra Trees' for frontend-backend consistency
+            if key.lower().replace(' ', '_') == selected_model_normalized:
                 matched_model_key = key
                 break
 

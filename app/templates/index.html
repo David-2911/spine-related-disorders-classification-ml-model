@@ -29,6 +29,14 @@
           id="random_forest"
         />
         <label for="random_forest">Random Forest</label>
+        <input
+          type="radio"
+          name="model"
+          value="extra_trees"
+          id="extra_trees"
+          checked
+        />
+        <label for="extra_trees">Extra Trees</label>
       </div>
       <p>
         The best model is: <strong>{{ best_model.name }}</strong> with a score

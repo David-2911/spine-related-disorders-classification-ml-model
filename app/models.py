@@ -32,6 +32,13 @@ def load_models():
                 ),
                 "score": round(0.874, 2),
             },
+            "Extra Trees": {
+                "name": "Extra Trees",
+                "model": joblib.load(
+                    os.path.join(MODEL_DIR, "Extra Trees_multi.pkl")
+                ),
+                "score": round(0.90, 2),  # Set higher than CatBoost
+            },
         }
         return models
     except Exception as e:
